@@ -1,5 +1,25 @@
 import * as chains from "viem/chains";
 
+export const kyotoTestnetChain = {
+  id: 1998,
+  name: "Kyoto Testnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Kyoto Testnet Token",
+    symbol: "KYOTO",
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://rpc.testnet.kyotoprotocol.io:8545"],
+    },
+    public: {
+      http: ["https://rpc.testnet.kyotoprotocol.io:8545"],
+    },
+  },
+  network: "kyoto-testnet",
+  testnet: true,
+} satisfies chains.Chain;
+
 export type ScaffoldConfig = {
   targetNetworks: readonly chains.Chain[];
   pollingInterval: number;
@@ -25,6 +45,7 @@ const scaffoldConfig = {
     chains.zkSyncTestnet,
     chains.scroll,
     chains.scrollSepolia,
+    kyotoTestnetChain,
   ],
 
   // The interval at which your front-end polls the RPC servers for new data

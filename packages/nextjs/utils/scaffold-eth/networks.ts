@@ -1,5 +1,5 @@
 import * as chains from "viem/chains";
-import scaffoldConfig from "~~/scaffold.config";
+import scaffoldConfig, { kyotoTestnetChain } from "~~/scaffold.config";
 
 type ChainAttributes = {
   // color | [lightThemeColor, darkThemeColor]
@@ -106,6 +106,10 @@ export const NETWORKS_EXTRA_DATA: Record<string, ChainAttributes> = {
     etherscanEndpoint: "https://api-sepolia.scrollscan.com",
     etherscanApiKey: SCROLL_ETHERSCAN_API_KEY,
     icon: "/scroll.svg",
+  },
+  [kyotoTestnetChain.id]: {
+    color: "#f01a37",
+    icon: "https://testnet.kyotoscan.io/favicon/favicon.svg",
   },
 };
 
